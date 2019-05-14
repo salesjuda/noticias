@@ -13,5 +13,5 @@ var rotaFormularioInclusaoNoticias = require('./app/routes/formulario_inclusao_n
 
         // escutar o servidor na portal 3000 //
 app.listen(3000, function(){
-    console.log('Servidor Online');  // mostra uma mensagem no terminal e no console do navegador //
+    console.log('Servidor On');  // mostra uma mensagem no terminal e no console do navegador //
 });
