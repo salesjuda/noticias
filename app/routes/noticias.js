@@ -12,10 +12,10 @@ module.exports = function(app){
     });
 
     connection.query('SELECT * FROM noticias', function(error, result){
-        res.send(result);
-    });
-
-    
-        //res.render('noticias/noticias');
+        res.render("noticias/noticias", {noticias : result});
+        });
     });
 };
+
+// se der um erro de autenticação na conexão com o banco de dados, rodar o seguinte comando na administração do mysql
+// ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'sua senha'
