@@ -3,11 +3,11 @@ var app = require('./config/server');
 
 // importanto as rotas da pasta routes
 
-var rotaHome = require('./app/routes/home')(app);
+    //var rotaHome = require('./app/routes/home')(app);
 
-var rotaNoticias = require('./app/routes/noticias')(app);
+    //var rotaNoticias = require('./app/routes/noticias')(app);
 
-var rotaFormularioInclusaoNoticias = require('./app/routes/formulario_inclusao_noticias')(app);
+    //var rotaFormularioInclusaoNoticias = require('./app/routes/formulario_inclusao_noticias')(app);
 
 
 

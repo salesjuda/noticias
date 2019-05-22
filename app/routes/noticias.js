@@ -2,10 +2,10 @@ var dbConnection = require('../../config/dbConnection'); // require do modulo db
 
 module.exports = function(app){
 
-    var connection = dbConnection(); // executando a função
+    var connection = dbConnection(); // executando a função de conexão do banco de dados que está no config e foi importado no require
 
         app.get('/noticias', function(req, res){
-            
+
         connection.query('SELECT * FROM noticias', function(error, result){
             res.render("noticias/noticias", {noticias : result});
         });
