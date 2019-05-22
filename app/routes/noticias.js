@@ -1,18 +1,13 @@
+var dbConnection = require('../../config/dbConnection'); // require do modulo dbConnection que está dentro de config e faz a conexão com o banco
+
 module.exports = function(app){
 
-    app.get('/noticias', function(req, res){
+    var connection = dbConnection(); // executando a função
 
-    var mysql = require('mysql');
-
-    var connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: '1234',
-        database: 'portal_noticias'
-    });
-
-    connection.query('SELECT * FROM noticias', function(error, result){
-        res.render("noticias/noticias", {noticias : result});
+        app.get('/noticias', function(req, res){
+            
+        connection.query('SELECT * FROM noticias', function(error, result){
+            res.render("noticias/noticias", {noticias : result});
         });
     });
 };
