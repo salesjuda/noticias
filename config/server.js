@@ -5,5 +5,9 @@ var app = express();
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
-consign().include('app/routes').into(app); //faz um scam de todos os arquivos que estão na pasta routes e inclue essas rodas dentro do app(servidor).
+consign()
+    .include('app/routes') // carrega as rotas no autoload, de forma automatica e pratica
+    .then('config/dbConnection.js') // executa a conexão com o banco de dados 
+    .into(app); 
+
 module.exports = app;

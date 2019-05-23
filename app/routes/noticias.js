@@ -1,15 +1,15 @@
-var dbConnection = require('../../config/dbConnection'); // require do modulo dbConnection que está dentro de config e faz a conexão com o banco
-
 module.exports = function(app){
 
-    var connection = dbConnection(); // executando a função de conexão do banco de dados que está no config e foi importado no require
+    app.get('/noticias', function(req, res){
 
-        app.get('/noticias', function(req, res){
+// executando a função de conexão do banco de dados que está no config e foi importado no require
+        var connection = app.config.dbConnection(); 
 
         connection.query('SELECT * FROM noticias', function(error, result){
             res.render("noticias/noticias", {noticias : result});
         });
     });
+
 };
 
 // se der um erro de autenticação na conexão com o banco de dados, rodar o seguinte comando na administração do mysql
