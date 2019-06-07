@@ -4,8 +4,10 @@ module.exports = function(app){
 
 // executando a função de conexão do banco de dados que está no config e foi importado no require
         var connection = app.config.dbConnection(); 
+        var noticiasModel = app.app.models.noticiasModel;
 
-        connection.query('SELECT * FROM noticias where id_noticia = 2', function(error, result){
+        
+        noticiasModel.getNoticia(connection, function(error, result){
             res.render("noticias/noticia", {noticia : result});
         });
     });

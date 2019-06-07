@@ -8,6 +8,7 @@ app.set('views', './app/views');
 consign()
     .include('app/routes') // carrega as rotas no autoload, de forma automatica e pratica
     .then('config/dbConnection.js') // executa a conexão com o banco de dados 
+    .then('app/models')
     .into(app); 
 
 module.exports = app;
