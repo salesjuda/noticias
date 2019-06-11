@@ -14,4 +14,4 @@ module.exports = function(app){
 };
 
 // se der um erro de autenticação na conexão com o banco de dados, rodar o seguinte comando na administração do mysql
-// ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'sua senha'
+// ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234'
