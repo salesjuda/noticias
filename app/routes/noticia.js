@@ -4,10 +4,10 @@ module.exports = function(app){
 
 // executando a função de conexão do banco de dados que está no config e foi importado no require
         var connection = app.config.dbConnection(); 
-        var noticiasModel = app.app.models.noticiasModel;
+        var noticiasModel = new app.app.models.NoticiasDAO(connection);
 
         
-        noticiasModel.getNoticia(connection, function(error, result){
+        noticiasModel.getNoticia(function(error, result){
             res.render("noticias/noticia", {noticia : result});
         });
     });
